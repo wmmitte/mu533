@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CollecteurService } from './share/collecteur.service';
+import { Collecteur } from './share/collecteur.model';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-collecteur',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollecteurComponent implements OnInit {
 
-  constructor() { }
+  public collecteurs: Collecteur[];
+  subscription: Subscription;
+  constructor() {}
 
   ngOnInit() {
   }

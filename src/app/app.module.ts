@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ObjetComponent } from './objet/objet.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CollectionComponent } from './collection/collection.component';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import { TypeMouvementComponent } from './type-mouvement/type-mouvement.component';
@@ -25,6 +27,13 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { TypeUtilisateurComponent } from './type-utilisateur/type-utilisateur.component';
 import { CategorieFormComponent } from './categorie/categorie-form/categorie-form.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CategorieListComponent } from './categorie/categorie-list/categorie-list.component';
+import { CollecteurListeComponent } from './collecteur/collecteur-liste/collecteur-liste.component';
+import { CollectionListComponent } from './collection/collection-list/collection-list.component';
+import { LoadingComponent } from './share/loading/loading.component';
+import { CategorieItemComponent } from './categorie/categorie-item/categorie-item.component';
+import { CategorieSearchFormComponent } from './categorie/categorie-search-form/categorie-search-form.component';
 
 @NgModule({
   declarations: [
@@ -51,10 +60,16 @@ import { CategorieFormComponent } from './categorie/categorie-form/categorie-for
     NavBarComponent,
     FooterComponent,
     TypeUtilisateurComponent,
-    CategorieFormComponent
+    CategorieFormComponent,
+    CategorieListComponent,
+    CollecteurListeComponent,
+    CollectionListComponent,
+    LoadingComponent,
+    CategorieItemComponent,
+    CategorieSearchFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

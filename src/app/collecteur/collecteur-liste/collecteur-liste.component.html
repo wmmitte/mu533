@@ -1,0 +1,15 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-white">
+    <li class="breadcrumb-item"><a routerLink="/directions">Collecteurs</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Liste</li>
+  </ol>
+</nav>
+<hr >
+<h5>Liste des Collecteurs</h5>
+<span *ngIf="collecteurs && collecteurs.length <= 0 && !isWorking">Acun resultat</span>
+<span *ngIf="collecteurs && collecteurs.length > 0 && !isWorking" class="text-muted text-right">{{collecteurs.length | number:0}} resultat(s)</span>
+<ol>
+<div *ngFor="let collecteur of collecteurs">
+  <li> {{collecteur.nom}}  {{collecteur.prenom}} </li>
+</div>
+</ol>

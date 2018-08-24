@@ -1,0 +1,15 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-white">
+    <li class="breadcrumb-item"><a routerLink="/categories" routerLinkActive="active">Categories</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Liste</li>
+  </ol>
+</nav>
+<hr >
+<h5>Liste des Categories 
+<span *ngIf="categories && categories.length <= 0">[ Acun resultat ]</span>
+<span *ngIf="categories && categories.length > 0 " class="text-muted text-right">[ {{categories.length | number:0}} resultat(s) ]</span>
+</h5>
+<!-- <span *ngIf="isWorking"><app-loading></app-loading></span> -->
+<div *ngFor="let categorieFromPrentList of categories">
+<app-categorie-item [categorieFromParentToItem]="categorieFromPrentList" (removeCategorie)="remove($event)" (itemToParentData)="sendToSubject($event)"> </app-categorie-item>
+</div>
